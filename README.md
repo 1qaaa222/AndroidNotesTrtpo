@@ -15,14 +15,16 @@
 	3User Story: отображенеие списка заметок
 	4User Story: просмотр отдельной заметки
 ### 4 Scrum Poker
- ![image](https://github.com/1qaaa222/NotesTrtpo/assets/113481180/c96aedaa-6ead-45d0-bcf8-483b6c254443)
+ ![image](https://github.com/1qaaa222/NotesTrtpo/assets/113481180/665b2c7c-dcf0-4bc1-9931-408d2e0b7877)
+
 Полученные оценки 
   1User Story:8
-	2User Story:21	
-	3User Story:13
-	4User Story:13
+  2User Story:21	
+  3User Story:13
+  4User Story:13
 #### 5 Task Tracker
-![image](https://github.com/1qaaa222/NotesTrtpo/assets/113481180/a37a5add-3e39-4d75-be5f-3e2dd8152373)
+![Uploading image.png…]()
+
 
 ### 6 Исходный код проекта
 
