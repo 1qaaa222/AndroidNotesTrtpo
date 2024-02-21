@@ -18,8 +18,9 @@
  ![image](https://github.com/1qaaa222/NotesTrtpo/assets/113481180/665b2c7c-dcf0-4bc1-9931-408d2e0b7877)
 
 Полученные оценки:
+
 1User Story:8
-2User Story:21	
+2User Story:21
 3User Story:13
 4User Story:13
  
