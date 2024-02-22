@@ -50,7 +50,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+ @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(requestCode == 101){
+            if(resultCode == Activity.RESULT_OK){
+                Notes new_notes = (Notes)data.getSerializableExtra("note");
+                database.mainDao().insert(new_notes);
+                notes.clear();
+                notes.addAll(database.mainDao().getAll());
+                notesListAdapter.notifyDataSetChanged();
+            }
+        }
+    }
     private void updateRecycler(List<Notes> notes) {
 
         recyclerView.setHasFixedSize(true);
