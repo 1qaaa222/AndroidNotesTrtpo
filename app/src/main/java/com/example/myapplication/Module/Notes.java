@@ -13,7 +13,7 @@ public class Notes implements Serializable {
     @ColumnInfo(name = "title")
     String title = "";
 
-    @ColumnInfo(name = "notes")
+    @ColumnInfo(name ="notes")
     String notes = "";
 
     @ColumnInfo(name = "date")

@@ -1,11 +1,14 @@
 package com.example.myapplication;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     NotesListAdapter notesListAdapter;
     RoomDB database;
     List<Notes> notes = new ArrayList<>();
+    SearchView searchView_home;
 
 
     @Override
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_home);
         fab_add = findViewById(R.id.fab_add);
+
+        searchView_home = findViewById(R.id.searchView_home);
 
         database = RoomDB.getInstance(this);
         notes = database.mainDao().getAll();
@@ -49,8 +55,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        searchView_home.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+
+
+                return false;
+            }
+        });
+
     }
- @Override
+
+    private void filter(String newText) {
+        List<Notes> filterList =new ArrayList<>();
+        for(Notes singleNote : notes){
+        }
+
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -58,6 +87,16 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode == Activity.RESULT_OK){
                 Notes new_notes = (Notes)data.getSerializableExtra("note");
                 database.mainDao().insert(new_notes);
+                notes.clear();
+                notes.addAll(database.mainDao().getAll());
+                notesListAdapter.notifyDataSetChanged();
+            }
+        }
+
+        if(requestCode==102){
+            if(resultCode == Activity.RESULT_OK){
+                Notes new_notes = (Notes)data.getSerializableExtra("note");
+                database.mainDao().update(new_notes.getID(), new_notes.getTitle(), new_notes.getNotes());
                 notes.clear();
                 notes.addAll(database.mainDao().getAll());
                 notesListAdapter.notifyDataSetChanged();
@@ -74,6 +113,9 @@ public class MainActivity extends AppCompatActivity {
     private final NotesClickListener notesClickListener = new NotesClickListener() {
         @Override
         public void onClick(Notes notes) {
+            Intent intent =new Intent(MainActivity.this, NotesTakerActivity.class);
+            intent.putExtra("old_notes", notes);
+            startActivityForResult(intent,102 );
         }
 
         @Override
