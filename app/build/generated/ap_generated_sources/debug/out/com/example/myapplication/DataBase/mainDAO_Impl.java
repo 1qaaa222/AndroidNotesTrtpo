@@ -29,6 +29,8 @@ public final class mainDAO_Impl implements mainDAO {
 
   private final SharedSQLiteStatement __preparedStmtOfUpdate;
 
+  private final SharedSQLiteStatement __preparedStmtOfPin;
+
   public mainDAO_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfNotes = new EntityInsertionAdapter<Notes>(__db) {
@@ -77,6 +79,14 @@ public final class mainDAO_Impl implements mainDAO {
       @NonNull
       public String createQuery() {
         final String _query = "UPDATE notes SET title = ?, notes = ? WHERE ID =?";
+        return _query;
+      }
+    };
+    this.__preparedStmtOfPin = new SharedSQLiteStatement(__db) {
+      @Override
+      @NonNull
+      public String createQuery() {
+        final String _query = "UPDATE notes SET pinned = ? WHERE ID = ?";
         return _query;
       }
     };
@@ -134,6 +144,28 @@ public final class mainDAO_Impl implements mainDAO {
       }
     } finally {
       __preparedStmtOfUpdate.release(_stmt);
+    }
+  }
+
+  @Override
+  public void pin(final int id, final boolean pin) {
+    __db.assertNotSuspendingTransaction();
+    final SupportSQLiteStatement _stmt = __preparedStmtOfPin.acquire();
+    int _argIndex = 1;
+    final int _tmp = pin ? 1 : 0;
+    _stmt.bindLong(_argIndex, _tmp);
+    _argIndex = 2;
+    _stmt.bindLong(_argIndex, id);
+    try {
+      __db.beginTransaction();
+      try {
+        _stmt.executeUpdateDelete();
+        __db.setTransactionSuccessful();
+      } finally {
+        __db.endTransaction();
+      }
+    } finally {
+      __preparedStmtOfPin.release(_stmt);
     }
   }
 
