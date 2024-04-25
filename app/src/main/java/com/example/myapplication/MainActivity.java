@@ -24,11 +24,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
+import android.view.View;
+import android.widget.Toast;
+import android.content.Intent;
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
 
     RecyclerView recyclerView;
-    FloatingActionButton fab_add;
+    FloatingActionButton fab_add, fab_calendar;
     NotesListAdapter notesListAdapter;
     RoomDB database;
     List<Notes> notes = new ArrayList<>();
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         recyclerView = findViewById(R.id.recycler_home);
         fab_add = findViewById(R.id.fab_add);
+        fab_calendar=findViewById(R.id.fab_calendar);
 
         searchView_home = findViewById(R.id.searchView_home);
 
@@ -58,6 +61,16 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 startActivityForResult(intent, 101);
             }
         });
+
+        fab_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, NotesCalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         searchView_home.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -89,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         if (isFilterApplied) {
             notesListAdapter.filterList(filteredList);
         } else {
-            // Если строка поиска пуста, добавляем все заметки
+
             notesListAdapter.filterList(notes);
         }
     }

@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../qt/Sdk/icons/material/materialicons/save/baseline_save_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../myandroidsdk/icons/material/materialicons/account_box/baseline_account_box_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="c8ecaf" />
-                            <entry key="outputName" value="baseline_save_24" />
+                            <entry key="color" value="131a13" />
+                            <entry key="outputName" value="ic_account_icon" />
                             <entry key="sourceFile" value="D:\MyApplication6" />
                           </map>
                         </option>
