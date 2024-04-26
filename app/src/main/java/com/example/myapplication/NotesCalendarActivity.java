@@ -7,7 +7,6 @@ import com.skyhope.eventcalenderlibrary.CalenderEvent;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class NotesCalendarActivity extends AppCompatActivity {
-
     CalenderEvent calendarView;
 
     @Override
