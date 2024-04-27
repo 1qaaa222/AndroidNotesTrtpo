@@ -10,8 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1432c7f-ae13-4d50-b5ca-c13eea649d88" name="Changes" comment="MainActivity.java, mainDAO.java, NotesListAdapter.java, NotesTakerActivity.java">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/DataBase/CalendarDbHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/DataBase/CalendarDbHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/DataBase/CalendarDbHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/NotesCalendarActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/myapplication/NotesCalendarActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/calendar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/calendar.xml" afterDir="false" />
     </list>
@@ -272,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714157486532</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="MainActivity.java, mainDAO.java, NotesListAdapter.java, NotesTakerActivity.java">
+      <created>1714229829191</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714229829191</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="-69dp"
-        tools:layout_editor_absoluteY="-16dp"
-        android:selector_color="#FF0000"/>
+        tools:layout_editor_absoluteY="-16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

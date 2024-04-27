@@ -41,4 +41,27 @@ public class CalendarDbHelper extends SQLiteOpenHelper {
         values.put(COLUMN_NOTE, note);
         db.insert(TABLE_NAME, null, values);
     }
+
+    public String getNoteByDate(String date) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {COLUMN_NOTE};
+        String selection = COLUMN_DATE + " = ?";
+        String[] selectionArgs = {date};
+        Cursor cursor = db.query(TABLE_NAME, projection, selection, selectionArgs, null, null, null);
+        String note = null;
+        if (cursor.moveToFirst()) {
+            note = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_NOTE));
+        }
+        cursor.close();
+        return note;
+    }
+
+    public void updateNoteByDate(String date, String note) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NOTE, note);
+        String selection = COLUMN_DATE + " = ?";
+        String[] selectionArgs = {date};
+        db.update(TABLE_NAME, values, selection, selectionArgs);
+    }
 }
