@@ -18,6 +18,7 @@
 
             android:exported="false" />
         <activity android:name=".NotesCalendarActivity" />
+        <activity android:name=".ActivityDay" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

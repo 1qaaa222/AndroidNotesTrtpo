@@ -30,7 +30,7 @@ import android.content.Intent;
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
 
     RecyclerView recyclerView;
-    FloatingActionButton fab_add, fab_calendar;
+    FloatingActionButton fab_add, fab_calendar, fab_day;
     NotesListAdapter notesListAdapter;
     RoomDB database;
     List<Notes> notes = new ArrayList<>();
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
         recyclerView = findViewById(R.id.recycler_home);
         fab_add = findViewById(R.id.fab_add);
+        fab_day = findViewById(R.id.fab_day);
         fab_calendar=findViewById(R.id.fab_calendar);
 
         searchView_home = findViewById(R.id.searchView_home);
@@ -71,6 +72,16 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
+
+
+
+        fab_day.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ActivityDay.class);
+                startActivity(intent);
+            }
+        });
 
         searchView_home.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

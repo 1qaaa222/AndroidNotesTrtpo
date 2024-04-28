@@ -4,23 +4,20 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-
 import com.example.myapplication.DataBase.CalendarDbHelper;
 import com.skyhope.eventcalenderlibrary.CalenderEvent;
 import com.skyhope.eventcalenderlibrary.model.DayContainerModel;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.skyhope.eventcalenderlibrary.listener.CalenderDayClickListener;
-
 import android.util.Log;
 import android.widget.EditText;
+
 
 public class NotesCalendarActivity extends AppCompatActivity {
     private static final String TAG = "CalenderTest";
     private CalenderEvent calendarView;
     private CalendarDbHelper dbHelper;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +36,7 @@ public class NotesCalendarActivity extends AppCompatActivity {
                     createNoteDialog(date);
                 }
             }
+
         });
     }
 
@@ -139,7 +137,9 @@ public class NotesCalendarActivity extends AppCompatActivity {
         values.put(CalendarDbHelper.COLUMN_NOTE, note);
         db.insert(CalendarDbHelper.TABLE_NAME, null, values);
         Log.d(TAG, "Note saved for date: " + date);
+
     }
+
 
     private void updateNoteInDatabase(String date, String note) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
