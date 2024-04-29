@@ -18,7 +18,9 @@ import android.widget.Toast;
 
 import com.example.myapplication.Adapter.NotesListAdapter;
 import com.example.myapplication.DataBase.RoomDB;
+import com.example.myapplication.DataBase.RoomTaskDB;
 import com.example.myapplication.Module.Notes;
+import com.example.myapplication.Module.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -30,10 +32,12 @@ import android.content.Intent;
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
 
     RecyclerView recyclerView;
-    FloatingActionButton fab_add, fab_calendar, fab_day;
+    FloatingActionButton fab_add, fab_calendar, fab_day, fab_task;
     NotesListAdapter notesListAdapter;
     RoomDB database;
+
     List<Notes> notes = new ArrayList<>();
+
     SearchView searchView_home;
     Notes selectedNote;
 
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         recyclerView = findViewById(R.id.recycler_home);
         fab_add = findViewById(R.id.fab_add);
         fab_day = findViewById(R.id.fab_day);
+        fab_task = findViewById(R.id.fab_task);
         fab_calendar=findViewById(R.id.fab_calendar);
 
         searchView_home = findViewById(R.id.searchView_home);
@@ -68,6 +73,17 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             public void onClick(View view) {
 
                 Intent intent = new Intent(MainActivity.this, NotesCalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+        fab_task.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, TaskActivity.class);
                 startActivity(intent);
             }
         });
@@ -143,6 +159,10 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         }
     }
+
+
+
+
     private void updateRecycler(List<Notes> notes) {
 
         recyclerView.setHasFixedSize(true);

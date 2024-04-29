@@ -19,6 +19,8 @@
             android:exported="false" />
         <activity android:name=".NotesCalendarActivity" />
         <activity android:name=".ActivityDay" />
+        <activity android:name=".TaskActivity" />
+        <activity android:name=".TaskTakerActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

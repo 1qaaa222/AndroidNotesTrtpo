@@ -38,9 +38,8 @@ public class NotesTakerActivity extends AppCompatActivity {
         if(!isOldNote){
             notes=new Notes();
         }
-        notes=new Notes();
         try {
-            notes = (Notes) getIntent().getSerializableExtra("old_note");
+            notes = (Notes) getIntent().getSerializableExtra("old_notes");
             editText_title.setText(notes.getTitle());
             editText_notes.setText(notes.getNotes());
             isOldNote=true;

@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../myandroidsdk/icons/material/materialicons/account_box/baseline_account_box_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../myandroidsdk/icons/material/materialicons/check_circle/baseline_check_circle_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -29,7 +29,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="131a13" />
-                            <entry key="outputName" value="ic_account_icon" />
+                            <entry key="outputName" value="task_do" />
                             <entry key="sourceFile" value="D:\MyApplication6" />
                           </map>
                         </option>
