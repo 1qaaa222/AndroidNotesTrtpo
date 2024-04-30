@@ -30,7 +30,7 @@ public class ActivityDay extends AppCompatActivity {
 
 
         SectionDecorator decorator = new SectionDecorator(this);
-        decorator.setLineColor(R.color.green);
+        decorator.setLineColor(R.color.color1);
         decorator.setLineWidth(15f);
         recyclerView.addItemDecoration(decorator);
     }

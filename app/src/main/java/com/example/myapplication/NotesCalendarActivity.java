@@ -3,6 +3,7 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import com.example.myapplication.DataBase.CalendarDbHelper;
 import com.skyhope.eventcalenderlibrary.CalenderEvent;
@@ -10,8 +11,12 @@ import com.skyhope.eventcalenderlibrary.model.DayContainerModel;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.skyhope.eventcalenderlibrary.listener.CalenderDayClickListener;
+import com.skyhope.eventcalenderlibrary.model.Event;
+
 import android.util.Log;
 import android.widget.EditText;
+
+import java.util.Calendar;
 
 
 public class NotesCalendarActivity extends AppCompatActivity {
@@ -26,9 +31,11 @@ public class NotesCalendarActivity extends AppCompatActivity {
         dbHelper = new CalendarDbHelper(this);
         calendarView = findViewById(R.id.calender_event);
 
+
         calendarView.initCalderItemClickCallback(new CalenderDayClickListener() {
             @Override
             public void onGetDay(DayContainerModel dayContainerModel) {
+
                 String date = dayContainerModel.getDate();
                 if (isNoteAvailable(date)) {
                     openNoteDialog(date);
@@ -138,6 +145,13 @@ public class NotesCalendarActivity extends AppCompatActivity {
         db.insert(CalendarDbHelper.TABLE_NAME, null, values);
         Log.d(TAG, "Note saved for date: " + date);
 
+        // Создание события с красным цветом и датой 1 мая 2024 года
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(2024, Calendar.MAY, 11, 0, 0, 0);
+        long desiredTimeInMillis = calendar.getTimeInMillis();
+
+        Event event = new Event(desiredTimeInMillis, "!!!", Color.RED);
+        calendarView.addEvent(event);
     }
 
 

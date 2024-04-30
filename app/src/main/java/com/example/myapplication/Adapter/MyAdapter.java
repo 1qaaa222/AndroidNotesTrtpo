@@ -1,5 +1,6 @@
 package com.example.myapplication.Adapter;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
@@ -103,7 +105,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> impl
 
         public void bind(String text, int section) {
             if (section % 2 == 0) {
-                itemView.setBackgroundColor(Color.CYAN);
+                itemView.setBackgroundColor(Color.GRAY);
             } else {
                 itemView.setBackgroundColor(Color.LTGRAY);
             }
