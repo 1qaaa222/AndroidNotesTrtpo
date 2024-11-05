@@ -11,17 +11,12 @@
 	2User Story: сохранение заметки в базе данных
 	3User Story: отображенеие списка заметок
 	4User Story: просмотр отдельной заметки
-#### 4 Scrum Poker
- ![image](https://github.com/1qaaa222/NotesTrtpo/assets/113481180/665b2c7c-dcf0-4bc1-9931-408d2e0b7877)
+#### 4 промежуточные скриншоты приложения 
+![photo_5285019621109393387_y](https://github.com/user-attachments/assets/a037f6de-f293-4072-ac8e-6588bc2e47bc)
+![photo_5285019621109393386_y](https://github.com/user-attachments/assets/dcec03df-3781-4f95-8eae-6c9aafd66699)
+![photo_5285019621109393384_y](https://github.com/user-attachments/assets/2c14298d-5f6e-4767-868b-c038a91efad4)
 
-###### Полученные оценки:
-	1User Story:8
- 	2User Story:21
-  	3User Story:13
-   	4User Story:13
-	 
 #### 5 Task Tracker
 ![image](https://github.com/1qaaa222/NotesTrtpo/assets/113481180/f36b4c7f-5b3d-4b06-ba1c-051acc6f6555)
 #### 6 Исходный код проекта
-
 -[https://github.com/1qaaa222/NotesTrtpo/]
